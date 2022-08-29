@@ -1,12 +1,12 @@
 import React from "react";
 import Banner from "../Component/Banner";
-import DataForm from "../Component/DataForm";
 import LowerContent from "../Component/LowerContent";
+import TopBanner from "../Component/TopBanner";
 
 export default function Home() {
   return (
     <div className="main">
-      <DataForm />
+      <TopBanner />
       <Banner />
       <LowerContent />
     </div>

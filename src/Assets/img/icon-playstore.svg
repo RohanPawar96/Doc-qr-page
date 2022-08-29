@@ -1,0 +1,44 @@
+<svg id="Mobile_app_store_badge" data-name="Mobile app store badge" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="65" viewBox="0 0 200 65">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.915" y1="0.05" x2="0" y2="0.719" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00a0ff"/>
+      <stop offset="0.007" stop-color="#00a1ff"/>
+      <stop offset="0.26" stop-color="#00beff"/>
+      <stop offset="0.512" stop-color="#00d2ff"/>
+      <stop offset="0.76" stop-color="#00dfff"/>
+      <stop offset="1" stop-color="#00e3ff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="1.076" y1="0.5" x2="0" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffe000"/>
+      <stop offset="0.409" stop-color="#ffbd00"/>
+      <stop offset="0.775" stop-color="orange"/>
+      <stop offset="1" stop-color="#ff9c00"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.863" y1="0.178" x2="0" y2="1.948" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ff3a44"/>
+      <stop offset="1" stop-color="#c31162"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x2="0.421" y2="0.249" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#32a071"/>
+      <stop offset="0.068" stop-color="#2da771"/>
+      <stop offset="0.476" stop-color="#15cf74"/>
+      <stop offset="0.801" stop-color="#06e775"/>
+      <stop offset="1" stop-color="#00f076"/>
+    </linearGradient>
+  </defs>
+  <rect id="Mobile_app_store_badge-2" data-name="Mobile app store badge" width="200" height="65" fill="#333"/>
+  <path id="Google_Play" data-name="Google Play" d="M50.879,14.555a6.926,6.926,0,0,1-13.852,0,6.926,6.926,0,0,1,13.852,0Zm-3.034,0a3.9,3.9,0,1,0-7.787,0,3.9,3.9,0,1,0,7.787,0Zm-12.076,0a6.926,6.926,0,0,1-13.852,0,6.926,6.926,0,0,1,13.852,0Zm-3.034,0a3.9,3.9,0,1,0-7.787,0,3.9,3.9,0,1,0,7.787,0ZM10.872,9.765h9.852a9.5,9.5,0,0,1,.157,1.831,9.7,9.7,0,0,1-2.536,6.859,9.787,9.787,0,0,1-7.474,3.011A10.874,10.874,0,0,1,0,10.733,10.874,10.874,0,0,1,10.872,0a10.2,10.2,0,0,1,7.344,2.957L16.151,5.026a7.455,7.455,0,0,0-5.279-2.095,7.693,7.693,0,0,0-7.683,7.8,7.693,7.693,0,0,0,7.683,7.8,7.165,7.165,0,0,0,5.41-2.147,6.115,6.115,0,0,0,1.595-3.69h-7V9.766Zm73.813,3.062-9.226,3.822A3.51,3.51,0,0,0,78.8,18.743a3.939,3.939,0,0,0,3.4-1.911L84.555,18.4A6.865,6.865,0,0,1,78.8,21.466a6.758,6.758,0,0,1-6.847-6.911,6.564,6.564,0,0,1,6.508-6.911,6.416,6.416,0,0,1,5.907,4.4Zm-3.553-1.045a2.674,2.674,0,0,0-2.561-1.466,3.788,3.788,0,0,0-3.608,4.032ZM67.463.734h3.03V21.049h-3.03ZM62.5,9.189V8.065h2.875V20.473c0,5.106-3.006,7.2-6.56,7.2A6.576,6.576,0,0,1,52.7,23.59l2.639-1.1a3.818,3.818,0,0,0,3.476,2.46c2.273,0,3.684-1.414,3.684-4.058V19.9h-.1a4.7,4.7,0,0,1-3.632,1.57,6.919,6.919,0,0,1,0-13.824,4.776,4.776,0,0,1,3.632,1.545h.1Zm.208,5.393c0-2.436-1.621-4.215-3.684-4.215a3.994,3.994,0,0,0-3.841,4.215,3.964,3.964,0,0,0,3.841,4.163A3.861,3.861,0,0,0,62.705,14.583Zm42.52-7.538a6.432,6.432,0,0,1-6.654,6.308H94.345v7.7H91.32V.735h7.253a6.432,6.432,0,0,1,6.653,6.31Zm-3.027,0a3.517,3.517,0,0,0-3.548-3.482H94.345v6.963h4.305A3.536,3.536,0,0,0,102.2,7.044Zm21.316,6.18v7.789h-2.923V19.445h-.1a4.266,4.266,0,0,1-3.861,1.987c-2.66,0-5.035-1.75-5.035-4.469,0-2.979,2.949-4.573,5.845-4.573a6.693,6.693,0,0,1,3.157.783v-.21c-.026-1.672-1.617-2.613-3.183-2.613a2.87,2.87,0,0,0-2.766,1.49l-2.686-1.123a5.681,5.681,0,0,1,5.4-3.11c3.468,0,6.158,2.012,6.156,5.616Zm-2.922,2.3a5.386,5.386,0,0,0-2.764-.679c-1.488,0-3.21.6-3.21,2.169,0,1.229,1.384,1.726,2.373,1.726a3.672,3.672,0,0,0,3.6-3.216Zm16.933-7.473L129.2,27.209h-3.157l3.079-6.848-5.4-12.309h3.261l3.6,8.808h.1l3.47-8.807ZM106.9.734h3.025V21.049H106.9Z" transform="translate(51.579 27.702)" fill="#fff"/>
+  <path id="Get_it_on" data-name="Get it on" d="M9.84,5.489A4.406,4.406,0,0,1,8.632,8.744a4.713,4.713,0,0,1-3.575,1.443A4.894,4.894,0,0,1,1.475,8.725,4.91,4.91,0,0,1,0,5.1,4.905,4.905,0,0,1,1.475,1.467,4.889,4.889,0,0,1,5.056,0a5.018,5.018,0,0,1,2,.408A4.006,4.006,0,0,1,8.575,1.5l-.855.858A3.282,3.282,0,0,0,5.055,1.2,3.7,3.7,0,0,0,2.4,2.283,3.732,3.732,0,0,0,1.275,5.094a3.765,3.765,0,0,0,3.78,3.893A3.686,3.686,0,0,0,7.774,7.9,3.073,3.073,0,0,0,8.59,5.925H5.055V4.753H9.771a3.916,3.916,0,0,1,.07.736Z" transform="translate(52.082 11.156)" fill="#fff" stroke="#fff" stroke-width="0.2"/>
+  <path id="Get_it_on-2" data-name="Get it on" d="M17.319,1.417H12.887V4.508h4V5.679h-4V8.77h4.432v1.2H11.636V.219h5.683Z" transform="translate(52.082 11.156)" fill="#fff" stroke="#fff" stroke-width="0.2"/>
+  <path id="Get_it_on-3" data-name="Get it on" d="M22.593,9.969H21.342V1.417H18.623V.219h6.688v1.2H22.593Z" transform="translate(52.082 11.156)" fill="#fff" stroke="#fff" stroke-width="0.2"/>
+  <path id="Get_it_on-4" data-name="Get it on" d="M30.151,9.969V.219H31.4v9.75Z" transform="translate(52.082 11.156)" fill="#fff" stroke="#fff" stroke-width="0.2"/>
+  <path id="Get_it_on-5" data-name="Get it on" d="M36.948,9.969H35.7V1.417H32.978V.219h6.688v1.2H36.948Z" transform="translate(52.082 11.156)" fill="#fff" stroke="#fff" stroke-width="0.2"/>
+  <path id="Get_it_on-6" data-name="Get it on" d="M52.328,8.71a5.048,5.048,0,0,1-7.136,0,4.99,4.99,0,0,1-1.434-3.616,4.99,4.99,0,0,1,1.434-3.616,5.028,5.028,0,0,1,7.13.007,4.989,4.989,0,0,1,1.441,3.609A5,5,0,0,1,52.328,8.71Zm-6.213-.817a3.74,3.74,0,0,0,5.288,0,3.822,3.822,0,0,0,1.082-2.8A3.822,3.822,0,0,0,51.4,2.3a3.74,3.74,0,0,0-5.288,0,3.827,3.827,0,0,0-1.08,2.8,3.827,3.827,0,0,0,1.08,2.8Z" transform="translate(52.082 11.156)" fill="#fff" stroke="#fff" stroke-width="0.2"/>
+  <path id="Get_it_on-7" data-name="Get it on" d="M55.517,9.969V.219h1.522L61.769,7.8h.054l-.054-1.878V.219H63.02v9.75H61.714L56.765,2.017h-.054L56.765,3.9V9.969Z" transform="translate(52.082 11.156)" fill="#fff" stroke="#fff" stroke-width="0.2"/>
+  <g id="Google_Play_logo" data-name="Google Play logo">
+    <path id="Vector" d="M.67,0,16.135,15.492v.365L.67,31.348l-.092-.09A2.5,2.5,0,0,1,0,29.5V1.848A2.507,2.507,0,0,1,.578.091Z" transform="translate(10.178 16.827)" fill="url(#linear-gradient)"/>
+    <path id="Vector-2" data-name="Vector" d="M5.154,10.695,0,5.529V5.164L5.155,0l.116.066,6.108,3.476c1.744.993,1.744,2.617,0,3.611L5.271,10.63Z" transform="translate(26.313 27.155)" fill="url(#linear-gradient-2)"/>
+    <path id="Vector-3" data-name="Vector" d="M2.594,15.661A2.028,2.028,0,0,1,0,15.584L15.556,0l5.273,5.282Z" transform="translate(10.756 32.502)" fill="url(#linear-gradient-3)"/>
+    <path id="Vector-4" data-name="Vector" d="M15.557,16.081,0,.5A2.027,2.027,0,0,1,2.594.42L20.828,10.8Z" transform="translate(10.756 16.422)" fill="url(#linear-gradient-4)"/>
+  </g>
+</svg>

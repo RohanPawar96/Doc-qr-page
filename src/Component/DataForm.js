@@ -5,7 +5,6 @@ function DataForm() {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
@@ -15,12 +14,6 @@ function DataForm() {
 
   return (
     <div className="container">
-      <div className="container">
-        <h1 className="head-h1">
-          Get your FREE 4Balance wellness guide curated by Ayurvedic doctors
-        </h1>
-        <p className="head-p green">CUSTOMIZED . LONG TERM . NATURAL</p>
-      </div>
       <form onSubmit={handleSubmit(onSubmit)} class="row">
         <div class="col">
           <input
@@ -116,7 +109,7 @@ function DataForm() {
           </label>
         </div>
         <div class="col-12">
-          <input type="Submit" value="VIEW NOW" />
+          <input type="Submit" value="VIEW FOR FREE" />
         </div>
       </form>
     </div>

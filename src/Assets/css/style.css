@@ -11,6 +11,16 @@ p {
   text-align: -webkit-center;
 }
 
+.background {
+  width: 80% !important;
+  background-color: #fffbf6;
+  padding: 1%;
+}
+
+.background hr {
+  height: 60px;
+}
+
 ul,
 li {
   margin: 0;
@@ -18,9 +28,32 @@ li {
   list-style: none;
 }
 
+.mobile {
+  display: none;
+}
+
 img {
   width: 100%;
   height: 100%;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+}
+
+.top-banner-first-content,
+.top-banner-third-content {
+  width: 45%;
+}
+
+hr {
+  color: #707070 !important;
+  border: 0;
+  border: 1px solid #707070 !important;
+  margin: 0 !important;
+  opacity: 0.4 !important;
+  background: #707070;
 }
 
 .green {
@@ -33,11 +66,21 @@ img {
   padding: 5% 0;
 }
 
+.rating {
+  display: flex;
+  justify-content: right;
+}
+
+img.star-rating {
+  width: 50%;
+}
+
 .row {
   display: grid !important;
   grid-template-columns: repeat(1, 1fr);
-  width: 60%;
-  margin: 2%;
+  margin: 2% 0;
+  padding: 0 !important;
+  row-gap: 7%;
 }
 
 .form-flex {
@@ -52,7 +95,7 @@ h1.head-h1 {
   font-weight: 700;
   letter-spacing: 1.2px;
   opacity: 1;
-  font-size: 30px;
+  font-size: 35px;
 }
 
 p.head-p {
@@ -60,7 +103,11 @@ p.head-p {
   font-weight: 700;
   letter-spacing: 3.84px;
   opacity: 1;
-  font-size: 24px;
+  font-size: 18px;
+}
+
+.alignment {
+  text-align: left;
 }
 
 .banner {
@@ -76,6 +123,31 @@ p.alert {
 
 .banner-image {
   padding: 0 15%;
+}
+
+.first {
+  width: 50%;
+  text-align: left;
+  padding: 2% 0 0 2%;
+}
+
+.second {
+  width: 50%;
+  text-align: right;
+  padding: 2% 2% 0 0;
+}
+
+.first h3 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.second h3 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 700;
+  padding: 1% 4%;
 }
 
 /* input[type="text"],
@@ -94,6 +166,10 @@ input[type="Submit"] {
   font-weight: 800;
 }
 
+.banner-hr {
+  margin: 0 5% !important;
+}
+
 ul.banner-content {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -105,6 +181,7 @@ ul.banner-content {
 
 .wp-content {
   text-align-last: left;
+  display: flex !important;
 }
 
 .banner-image {
@@ -167,6 +244,27 @@ p.number-content {
   padding-top: 5.6%;
 }
 
+.stores {
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+  margin-top: 2%;
+}
+
+.app {
+  width: 100%;
+}
+
+.app h1 {
+  font-size: 46px;
+  font-weight: 700;
+}
+
+.app p {
+  font-size: 20px;
+  font-weight: 500;
+}
+
 @media screen and (max-width: 350px) {
   .main {
     background-image: url("../img/qr-mobile-background.png");
@@ -174,16 +272,26 @@ p.number-content {
     padding: 5% 0;
   }
   h1.head-h1 {
-    font-size: 10px;
+    font-size: 1.5rem;
     font-weight: 900;
+    text-align: left;
   }
   p.head-p {
     font-size: 10px;
     letter-spacing: 0;
+    text-align: left;
   }
 
-  .row {
+  .app {
     width: 90%;
+  }
+
+  .desktop {
+    display: none !important;
+  }
+
+  .mobile {
+    display: block;
   }
 
   input[type="text"],
@@ -198,9 +306,6 @@ p.number-content {
     padding: 1% 7px !important;
     font-size: 0.8rem !important;
   } */
-  .wp-content {
-    font-size: 0.5rem;
-  }
 
   input[type="Submit"] {
     padding: 1% 6%;
@@ -253,6 +358,17 @@ p.number-content {
     font-size: 0.6rem;
     padding-top: 17%;
   }
+
+  .app h1 {
+    font-size: 30px;
+  }
+
+  .stores {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 2% 0;
+  }
 }
 
 @media screen and (min-width: 351px) and (max-width: 599px) {
@@ -262,18 +378,45 @@ p.number-content {
     padding: 5% 0;
   }
 
-  h1.head-h1 {
-    font-weight: 900;
-    font-size: 15px;
+  .app {
+    width: 90%;
   }
 
+  .app h1 {
+    font-size: 30px;
+  }
+
+  .playstore,
+  .appstore {
+    width: 40%;
+  }
+
+  .stores {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 2% 0;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  h1.head-h1 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-align: left;
+  }
   p.head-p {
+    font-size: 1rem;
     letter-spacing: 0;
-    font-size: 13px;
+    text-align: left;
+  }
+  .desktop {
+    display: none !important;
   }
 
   .row {
-    width: 90%;
     row-gap: 6%;
   }
 
@@ -404,5 +547,9 @@ p.number-content {
 
   ul.numbers {
     grid-template-columns: repeat(1, 14% 86%);
+  }
+
+  .stores {
+    width: 80%;
   }
 }
