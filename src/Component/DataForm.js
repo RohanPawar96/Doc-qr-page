@@ -1,64 +1,122 @@
 import React from "react";
-import {
-  validName,
-  validEmail,
-  validContact,
-} from "../Validation/validationForm";
+import { useForm } from "react-hook-form";
 
 function DataForm() {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    alert(JSON.stringify(data));
+  }; // your form submit function which will invoke after successful validation
+
   return (
     <div className="container">
       <div className="container">
         <h1 className="head-h1">
           Get your FREE 4Balance wellness guide curated by Ayurvedic doctors
         </h1>
-        <p className="head-p">CUSTOMIZED . LONG TERM . NATURAL</p>
+        <p className="head-p green">CUSTOMIZED . LONG TERM . NATURAL</p>
       </div>
-      <form class="row">
+      <form onSubmit={handleSubmit(onSubmit)} class="row">
         <div class="col">
           <input
+            {...register("firstName", {
+              required: true,
+              maxLength: 20,
+              pattern: /^[A-Za-z]+$/i,
+            })}
             type="text"
             class="form-control"
             placeholder="First name"
             aria-label="First name"
-            required
-            onChange={(event) => validName(event)}
           />
-          <div class="valid-feedback">Looks good!</div>
-          <div class="invalid-feedback">Please choose a username.</div>
+          <span>
+            {errors?.firstName?.type === "required" && (
+              <p class="alert alert-danger p-firstname" role="alert">
+                {" "}
+                This field is required
+              </p>
+            )}
+
+            {errors?.firstName?.type === "maxLength" && (
+              <p class="alert alert-danger p-firstname" role="alert">
+                First name cannot exceed 20 characters
+              </p>
+            )}
+
+            {errors?.firstName?.type === "pattern" && (
+              <p class="alert alert-danger p-firstname" role="alert">
+                Alphabetical characters only
+              </p>
+            )}
+          </span>
         </div>
         <div className="form-flex">
           <div class="col">
             <input
-              type="number"
+              type="email"
               class="form-control"
               placeholder="Email"
               aria-label="Email"
-              onChange={(event) => validEmail(event)}
-              maxLength={10}
-              required
+              //   onChange={(event) => validEmail(event)}
+              {...register("mail", {
+                required: true,
+                pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: "invalid email address",
+              })}
             />
-            <div class="valid-feedback">Looks good!</div>
-            <div class="invalid-feedback">Please choose a username.</div>
+            <span>
+              {errors?.mail?.type === "required" && (
+                <p class="alert alert-danger p-email" role="alert">
+                  This field is required
+                </p>
+              )}
+              {errors?.mail?.type === "pattern" && (
+                <p class="alert alert-danger p-email" role="alert">
+                  Invalid Email id
+                </p>
+              )}
+            </span>
           </div>
           <div class="col">
             <input
-              type="email"
+              type="number"
               class="form-control"
               placeholder="Contact"
               aria-label="Contact"
-              onChange={(event) => validContact(event)}
-              maxLength={10}
-              required
+              minLength={10}
+              {...register("number", { required: true, pattern: /[0-9]{10}/ })}
             />
-            <div class="valid-feedback">Looks good!</div>
-            <div class="invalid-feedback">Please choose a username.</div>
+            <span>
+              {errors?.number?.type === "required" && (
+                <p class="alert alert-danger p-number" role="alert">
+                  This field is required
+                </p>
+              )}
+              {errors.number?.type === "pattern" && (
+                <p class="alert alert-danger p-number" role="alert">
+                  10 digit only{" "}
+                </p>
+              )}
+            </span>
           </div>
         </div>
+        <div className="wp-content">
+          <input type="radio" name="whatsapp" />
+          <label htmlFor="whatsapp">
+            Get updates on{" "}
+            <span style={{ textDecoration: "underline" }} className="green">
+              WhatsApp
+            </span>
+            . You may opt out anytime
+          </label>
+        </div>
         <div class="col-12">
-          <button class="btn btn-primary" type="submit">
-            Submit form
-          </button>
+          <input type="Submit" value="VIEW NOW" />
         </div>
       </form>
     </div>
