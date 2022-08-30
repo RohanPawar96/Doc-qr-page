@@ -155,8 +155,8 @@ svg {
 }
 
 .text-anim--rotate {
-  --text-anim-duration: 0.85s;
-  --text-anim-pause: 2.5s;
+  --text-anim-duration: 0.1s;
+  --text-anim-pause: 0.1s;
 }
 .text-anim--rotate .text-anim__wrapper {
   -webkit-perspective: 300px;
@@ -203,12 +203,12 @@ svg {
 }
 
 .text-anim--loader {
-  --text-anim-duration: 2.5s;
-  --text-anim-pause: 0s;
+  --text-anim-duration: 0.1s;
+  --text-anim-pause: 0.1s;
 }
 .text-anim--loader .text-anim__word {
   color: transparent;
-  transition: color 0.2s;
+  transition: color 0.1s;
 }
 .text-anim--loader .text-anim__word::after {
   content: "";
@@ -248,7 +248,7 @@ svg {
 
 .text-anim--slide {
   --text-anim-duration: 0.5s;
-  --text-anim-pause: 2.5s;
+  --text-anim-pause: 0.1s;
 }
 .text-anim--slide .text-anim__wrapper {
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
@@ -320,8 +320,8 @@ svg {
   }
 }
 .text-anim--zoom {
-  --text-anim-duration: 0.85s;
-  --text-anim-pause: 2.5s;
+  --text-anim-duration: 0.1s;
+  --text-anim-pause: 0.1s;
 }
 .text-anim--zoom .text-anim__wrapper {
   -webkit-perspective: 300px;
@@ -351,8 +351,8 @@ svg {
 }
 
 .text-anim--push {
-  --text-anim-duration: 0.65s;
-  --text-anim-pause: 2.5s;
+  --text-anim-duration: 0.1s;
+  --text-anim-pause: 0.1s;
 }
 .text-anim--push .text-anim__word {
   opacity: 0;
@@ -382,8 +382,8 @@ svg {
 }
 
 .text-anim--clip {
-  --text-anim-duration: 0.7s;
-  --text-anim-pause: 2s;
+  --text-anim-duration: 0.1s;
+  --text-anim-pause: 0.1s;
   --text-anim-border-width: 2px;
 }
 .text-anim--clip .text-anim__wrapper {
@@ -400,8 +400,8 @@ svg {
   background-color: hsl(var(--az6-color-accent-hsl));
 }
 .text-anim--clip .text-anim__wrapper--pulse::after {
-  -webkit-animation: text-anim-pulse 0.8s infinite;
-  animation: text-anim-pulse 0.8s infinite;
+  -webkit-animation: text-anim-pulse 0.1s infinite;
+  animation: text-anim-pulse 0.1s infinite;
 }
 .text-anim--clip .text-anim__word {
   opacity: 0;

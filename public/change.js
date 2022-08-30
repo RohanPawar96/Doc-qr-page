@@ -1,4 +1,3 @@
-// utility functions
 if (!Util) function Util() {}
 
 Util.hasClass = function (el, className) {
@@ -49,12 +48,12 @@ Math.easeInOutQuart = function (t, b, c, d) {
     this.loopInterval =
       parseFloat(
         getComputedStyle(this.element).getPropertyValue("--text-anim-pause")
-      ) * 1000 || 1000;
+      ) * 2000 || 2000;
     // duration of single animation (e.g., time for a single word to rotate)
     this.transitionDuration =
       parseFloat(
         getComputedStyle(this.element).getPropertyValue("--text-anim-duration")
-      ) * 1000 || 1000;
+      ) * 2000 || 2000;
     // keep animating after first loop was completed
     this.loop =
       this.element.getAttribute("data-loop") &&

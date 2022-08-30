@@ -1,5 +1,6 @@
 import "./App.css";
 import "./Assets/css/style.css";
+import "./Assets/css/animation.css";
 import Home from "./Container/Home";
 
 function App() {
