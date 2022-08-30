@@ -347,7 +347,7 @@ p.number-content {
 
   .background {
     width: 80% !important;
-    background-color: #fffbf6;
+    background-color: rgba(255, 255, 255, 0);
     padding: 1%;
   }
 
@@ -498,7 +498,7 @@ p.number-content {
 
   .background {
     width: 80% !important;
-    background-color: #fffbf6;
+    background-color: rgba(255, 255, 255, 0);
     padding: 1%;
   }
 
