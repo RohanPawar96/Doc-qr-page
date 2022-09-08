@@ -17,7 +17,7 @@ p {
 
 .background {
   width: 100% !important;
-  background-color: #fffbf6;
+  background-color: rgba(255, 255, 255, 0);
   padding: 1%;
 }
 
@@ -191,7 +191,8 @@ ul.banner-content {
 .wp-content {
   width: 100%;
   text-align-last: left;
-  display: flex !important;
+  display: grid;
+  grid-template-columns: repeat(2, 4% 95%);
 }
 
 .banner-image {
@@ -211,11 +212,11 @@ label {
   padding: 3% 0;
 }
 
-input[type="radio"] {
+input[type="checkbox"] {
   margin-right: 1%;
   accent-color: #80a03c;
   appearance: revert !important;
-  border-radius: 999px;
+  width: 14px;
 }
 
 ul.numbers li {
@@ -482,6 +483,13 @@ p.number-content {
 
   .app {
     width: 90%;
+  }
+
+  input[type="checkbox"] {
+    margin-right: 1%;
+    accent-color: #80a03c;
+    appearance: revert !important;
+    width: 12px;
   }
 
   .app h1 {

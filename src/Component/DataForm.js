@@ -99,7 +99,7 @@ function DataForm() {
           </div>
         </div>
         <div className="wp-content">
-          <input type="radio" name="whatsapp" />
+          <input type="checkbox" name="whatsapp" id="whatsapp" />
           <label htmlFor="whatsapp">
             Get updates on{" "}
             <span style={{ textDecoration: "underline" }} className="green">
