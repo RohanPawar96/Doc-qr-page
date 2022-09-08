@@ -492,6 +492,10 @@ p.number-content {
     width: 12px;
   }
 
+  .wp-content {
+    grid-template-columns: repeat(2, 5% 95%);
+  }
+
   .app h1 {
     font-size: 30px;
   }
