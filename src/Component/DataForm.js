@@ -86,6 +86,7 @@ function DataForm() {
             class="form-control"
             placeholder="First name"
             aria-label="First name"
+            required
           />
           <span>
             {errors?.firstName?.type === "required" && (
@@ -127,6 +128,7 @@ function DataForm() {
                 pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                 message: "invalid email address",
               })}
+              required
             />
             <span>
               {errors?.mail?.type === "required" && (
@@ -150,6 +152,7 @@ function DataForm() {
               minLength={10}
               {...register("number", { required: true, pattern: /[0-9]{10}/ })}
               onChange={(e) => setContact(e.target.value)}
+              required
             />
             <span>
               {errors?.number?.type === "required" && (
