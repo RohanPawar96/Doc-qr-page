@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import DataForm from "./DataForm";
-import Stars from "../Assets/img/icon-start-rating.png";
 
-export default function TopBanner() {
+export default function TopBanner({ setDisplay }) {
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "./change.js";
@@ -42,7 +41,11 @@ export default function TopBanner() {
             <div className="second">
               <div className="rating">
                 <h3>4.5/5</h3>
-                <img className="star-rating" src={Stars} alt="4.5" />
+                <img
+                  className="star-rating"
+                  src="https://cdn11.bigcommerce.com/s-ad1xf4xgb0/content/qr_page/img/icon-start-rating.png"
+                  alt="4.5"
+                />
               </div>
               <p>100+ products</p>
             </div>
@@ -75,7 +78,7 @@ export default function TopBanner() {
             CUSTOMIZED . LONG TERM . NATURAL
           </p>
         </div>
-        <DataForm />
+        <DataForm setDisplay={setDisplay} />
       </div>
       <div className="mobile">
         <div className="container flex background">
@@ -87,7 +90,11 @@ export default function TopBanner() {
           <div className="second">
             <div className="rating">
               <h3>4.5/5</h3>
-              <img className="star-rating" src={Stars} alt="4.5" />
+              <img
+                className="star-rating"
+                src="https://cdn11.bigcommerce.com/s-ad1xf4xgb0/content/qr_page/img/icon-start-rating.png"
+                alt="4.5"
+              />
             </div>
             <p>100+ products</p>
           </div>

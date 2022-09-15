@@ -1,29 +1,20 @@
 import "./App.css";
 import "./Assets/css/style.css";
-import "./Assets/css/animation.css";
 import Home from "./Container/Home";
 import ForBalance from "./Component/For_BalancePDF_Page";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 function App(props) {
   return (
     <div className="App">
-      <Router>
-        <Routes>
-          <Route
-            path="/"
-            exact
-            strict
-            element={<Home />}
-            history={props.history}
-          />
-          <Route
-            path="/For_BalancePDF"
-            exact
-            strict
-            element={<ForBalance />}
-            history={props.history}
-          />
-        </Routes>
+      <Router history={Router}>
+        <Route path="/" exact strict component={Home} history={props.history} />
+        <Route
+          path="/for_BalancePDF"
+          exact
+          strict
+          component={ForBalance}
+          history={props.history}
+        />
       </Router>
     </div>
   );

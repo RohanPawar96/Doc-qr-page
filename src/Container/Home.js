@@ -9,7 +9,6 @@ export default function Home() {
       <TopBanner />
       <Banner />
       <LowerContent />
-
     </div>
   );
 }

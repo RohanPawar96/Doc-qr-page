@@ -1,9 +1,4 @@
 import React from "react";
-import expert from "../Assets/img/icon-experts.png";
-import lifestyle from "../Assets/img/icon-lifestyle.png";
-import product from "../Assets/img/icon-products.png";
-import diet from "../Assets/img/icon-diet.png";
-import bgContent from "../Assets/img/qr-banner.png";
 import MobileApp from "../Component/MobileApp";
 
 export default function Banner() {
@@ -11,12 +6,18 @@ export default function Banner() {
     <>
       <div className="container banner">
         <div className="banner-image">
-          <img src={bgContent} alt="" />
+          <img
+            src="https://cdn11.bigcommerce.com/s-ad1xf4xgb0/content/qr_page/img/qr-banner.png"
+            alt="qr-banner"
+          />
         </div>
         <ul className="banner-content">
           <li className="content">
             <div className="content-image">
-              <img src={product} alt="" />
+              <img
+                src="https://cdn11.bigcommerce.com/s-ad1xf4xgb0/content/qr_page/img/icon-products.png"
+                alt="product"
+              />
             </div>
             <h1 className="content-h1">
               AYURVEDIC
@@ -29,7 +30,10 @@ export default function Banner() {
           </li>
           <li className="content">
             <div className="content-image">
-              <img src={lifestyle} alt="" />
+              <img
+                src="https://cdn11.bigcommerce.com/s-ad1xf4xgb0/content/qr_page/img/icon-lifestyle.png"
+                alt="lifestyle"
+              />
             </div>
             <h1 className="content-h1">
               LIFESTYLE
@@ -42,7 +46,10 @@ export default function Banner() {
           </li>
           <li className="content">
             <div className="content-image">
-              <img src={diet} alt="" />
+              <img
+                src="https://cdn11.bigcommerce.com/s-ad1xf4xgb0/content/qr_page/img/icon-diet.png"
+                alt="diet"
+              />
             </div>
             <h1 className="content-h1">
               DIET & MEAL
@@ -55,7 +62,10 @@ export default function Banner() {
           </li>
           <li className="content">
             <div className="content-image">
-              <img src={expert} alt="" />
+              <img
+                src="https://cdn11.bigcommerce.com/s-ad1xf4xgb0/content/qr_page/img/icon-experts.png"
+                alt="expert"
+              />
             </div>
             <h1 className="content-h1">
               EXPERT

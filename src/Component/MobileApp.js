@@ -1,6 +1,4 @@
 import React from "react";
-import AppStore from "../Assets/img/icon-appstore.svg";
-import PlayStore from "../Assets/img/icon-playstore.svg";
 
 export default function MobileApp() {
   return (
@@ -13,12 +11,18 @@ export default function MobileApp() {
       <div className="stores">
         <div className="playstore">
           <a href="https://apps.apple.com/in/app/kapiva/id1616690263">
-            <img src={AppStore} alt="appstore" />
+            <img
+              src="https://cdn11.bigcommerce.com/s-ad1xf4xgb0/content/qr_page/img/icon-playstore.svg"
+              alt="appstore"
+            />
           </a>
         </div>
         <div className="appstore">
           <a href="https://play.google.com/store/apps/details?id=com.kapiva.app">
-            <img src={PlayStore} alt="playstore" />
+            <img
+              src="https://cdn11.bigcommerce.com/s-ad1xf4xgb0/content/qr_page/img/icon-appstore.svg"
+              alt="playstore"
+            />
           </a>
         </div>
       </div>
