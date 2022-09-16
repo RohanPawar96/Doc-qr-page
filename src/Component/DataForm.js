@@ -18,7 +18,6 @@ const getQuery = new Proxy(new URLSearchParams(window.location.search), {
   get: (searchParams, prop) => searchParams.get(prop),
 });
 function DataForm(props) {
-  // eslint-disable-next-line
   const [stringRadio, setStringradio] = useState("true");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -26,13 +25,10 @@ function DataForm(props) {
   const [optinWhatsapp_email, setoptinWhatsapp_email] = useState(1);
   const [validPhone, SetValidphone] = useState(" ");
   const [validName, setValidname] = useState(" ");
-  // eslint-disable-next-line
   const [validemail, setValidemail] = useState(" ");
   const [submitForm, setSubmitForm] = useState("");
   const [subMitButtonColor, setSumbitButtoncolor] = useState("#80a03c75");
   const [loading, setLoading] = useState(false);
-  let submitBtn = document.getElementById("submit");
-  // eslint-disable-next-line
   const [urlQ, setUrlQ] = useState({
     product: getQuery.product,
     utm_medium: getQuery.utm_medium,
@@ -41,15 +37,37 @@ function DataForm(props) {
     utm_source: getQuery.utm_source,
   });
   useEffect(() => {
-    submitValidate();
-  }, [validName, validPhone, validemail, submitValidate]);
+    // clear the input data on first load
+    setName("");
+    setEmail("");
+    setContact("");
+  }, []);
+  useEffect(() => {
+    if (validName === false && validPhone === false && validemail === false) {
+      setSubmitForm(true);
+    } else {
+      // console.log(" inside submitvalidname:",validName,"valiPhone:",validPhone,"Validemail", validemail, "Submit Form", submitForm);
+      setSubmitForm(false);
+    }
+    // console.log(
+    //   "validname:",
+    //   validName,
+    //   "valiPhone:",
+    //   validPhone,
+    //   "Validemail",
+    //   validemail,
+    //   "Submit Form",
+    //   submitForm
+    // );
+  }, [validName, validPhone, validemail]);
   function submitValidate() {
+    // console.log("calling final submit");
     if (!validName || !validPhone || !validemail) {
       setSubmitForm(false);
       setSumbitButtoncolor("#80a03c75");
     } else {
       setSubmitForm(true);
-      setSumbitButtoncolor("#80a03c");
+      setSumbitButtoncolor("#80A03C");
     }
   }
   function checkEmail(mail) {
@@ -60,7 +78,6 @@ function DataForm(props) {
       setValidemail(false);
     }
   }
-
   function checkName(name) {
     setName(name);
     var letters = /^[a-zA-Z]+ [a-zA-Z]+$/;
@@ -71,6 +88,7 @@ function DataForm(props) {
     }
   }
   function phonenumber(contact) {
+    // console.log("ephone len", contact.lenght);
     setContact(contact);
     const phone = String(contact).substring(3);
     var phoneno = /^[6789]\d{9}$/;
@@ -84,8 +102,10 @@ function DataForm(props) {
       SetValidphone(false);
     }
   }
-
   useEffect(() => {
+    // console.log(urlQ)
+    // console.log("this it the product1`23",query.get('product'))
+    // console.log("radiovalue", stringRadio)
     if (optinWhatsapp_email === true) {
       setoptinWhatsapp_email(1);
     }
@@ -93,13 +113,24 @@ function DataForm(props) {
       setoptinWhatsapp_email(0);
     }
   }, [optinWhatsapp_email]);
-
-  useEffect(() => {}, [validPhone]);
-  useEffect(() => {}, [optinWhatsapp_email]);
-
+  useEffect(() => {
+    // console.log(" initial phone validation", validPhone);
+  }, [validPhone]);
+  useEffect(() => {
+    // getData();
+    // console.log(setoptinWhatsapp_email);
+  }, [optinWhatsapp_email]);
+  // function getData() {
+  // console.log("this is therapy:",query.get('therapy'))
+  // console.log("this is utmSource",query.get('utm_source'))
+  // console.log("this is subcat:",query.get('subcategory'))
+  // }
   const handleSubmit = (e) => {
-    submitBtn.disabled = true;
     e.preventDefault();
+    // console.log(urlQ);
+    // console.log("this is the value", typeof valid);
+    // console.log(name, contact, email, optinWhatsapp_email, urlQ);
+    // console.log("this it ht ephone lenght", contact.length);
     if (
       !String(name).trim() ||
       !String(email).trim() ||
@@ -114,20 +145,20 @@ function DataForm(props) {
       if (!String(validPhone).trim()) {
         SetValidphone(false);
       }
+    } else if (!validName || !validPhone || !validemail) {
+      // console.log("validation check pointer");
     } else if (!validPhone) {
+      // console.log("ephone pointer");
       SetValidphone(false);
     } else {
       setLoading(true);
-
       var date = new Date();
       date.setTime(date.getTime() + 1 * 60 * 1000);
       var expires = "; expires=" + date.toGMTString();
       document.cookie =
         "userpdf=" + String(Math.random()) + expires + "; path=/";
-
       fetch("https://kapiva.app/api/4balance_lead.php?p=4balance_lead", {
         method: "POST",
-
         body: JSON.stringify({
           customer_name: name,
           mobile: contact,
@@ -148,22 +179,21 @@ function DataForm(props) {
           res.json();
         })
         .then((result) => {
-          // document.getElementsByClassName("form-control").item;
-          window.location = window.location =
-            "https://sandbox.kapiva.in/doctor-qr-page-pdf/";
+          window.location = "https://sandbox.kapiva.in/doctor-qr-page-pdf/";
         })
         .catch((error) => {
           alert("Faild");
         });
     }
   };
-
-  // useEffect(() => {
-  //   // clear the input data on first load
-  //   setName("");
-  //   setEmail("");
-  //   setContact("");
-  // }, []);
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   formState: { errors },
+  // } = useForm();
+  // const onSubmit = () => {
+  //   // console.log(name, email, contact, whatsapp);
+  // };
 
   return (
     <div className="container">
