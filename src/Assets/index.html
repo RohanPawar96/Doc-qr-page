@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .pdf {
+            width: 100%;
+            height: fit-content;
+        }
+    </style>
     <script>
         let returnF = false;
         function check_cookie_name(name) {
@@ -19,14 +25,15 @@
             }
         }
         check_cookie_name('userpdf');
-        returnF ? "" : "https://sandbox.kapiva.in/doctor-qr-page/";
+        returnF ? "" : window.location = "https://sandbox.kapiva.in/doctor-qr-page/"
     </script>
 </head>
 
 <body>
-    <embed src="https://cdn11.bigcommerce.com/s-ad1xf4xgb0/content/qr_page/pdf/balance_PDF.pdf" width="100%"
-        height="2100px" />
-
+    <div class="pdf">
+        <iframe src="https://cdn11.bigcommerce.com/s-ad1xf4xgb0/content/qr_page/pdf/balance_PDF.pdf" width="100%"
+            height="2450px" frameborder="0">
+    </div>
 </body>
 
 </html>

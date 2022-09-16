@@ -179,7 +179,11 @@ function DataForm(props) {
           res.json();
         })
         .then((result) => {
-          window.location = "https://sandbox.kapiva.in/doctor-qr-page-pdf/";
+          if (urlQ.therapy === "") {
+            window.location = "https://sandbox.kapiva.in/doctor-qr-page-pdf/";
+          } else {
+            window.location = `https://sandbox.kapiva.in/${urlQ.therapy}/4balancePDF/`;
+          }
         })
         .catch((error) => {
           alert("Faild");

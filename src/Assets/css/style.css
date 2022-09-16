@@ -752,6 +752,23 @@ p.number-content {
   }
 }
 
+@media screen and (min-width: 1024px) and (max-width: 1299px) {
+  p.head-p {
+    font-size: 30px;
+    letter-spacing: 1px;
+  }
+
+  #submit {
+    background-color: #80a03c;
+    border: 0;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 0.8% 6%;
+    width: 40%;
+  }
+}
+
 /*********************************************Animation********************************************************************/
 
 /* -------------------------------- 
