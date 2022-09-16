@@ -5,43 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Assets/css/style.css">
     <title>Document</title>
+    <script>
+        let returnF = false;
+        function check_cookie_name(name) {
+            var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            if (match) {
+                returnF = true;
+                console.log(match[2]);
+            }
+            else {
+                console.log('--something went wrong---');
+            }
+        }
+        check_cookie_name('userpdf');
+        returnF ? "" : "https://sandbox.kapiva.in/doctor-qr-page/";
+    </script>
 </head>
 
 <body>
-    <div className="container flex desktop">
-        <div className="top-banner-first-content">
-            <h1 className="head-h1">4Balance for</h1>
-            <h1 class="text-xxxl text-anim text-anim--slide js-text-anim">
-                <span class="text-anim__wrapper js-text-anim__wrapper"><i
-                        class="text-anim__word text-anim__word--in js-text-anim__word">design</i><i
-                        class="text-anim__word js-text-anim__word">develop</i><i
-                        class="text-anim__word js-text-anim__word">create</i></span>
-            </h1>
-            <p className="head-p">Curated by Ayurvedic doctors</p>
-            <p className="head-p green">CUSTOMIZED . LONG TERM . NATURAL</p>
-            <div className="container flex background">
-                <div className="first">
-                    <h3>2,00,000+</h3>
-                    <p>Healthy customers</p>
-                </div>
-                <hr />
-                <div className="second">
-                    <div className="rating">
-                        <h3>4.5/5</h3>
-                        <img className="star-rating" src={Stars} alt="4.5" />
-                    </div>
-                    <p>100+ products</p>
-                </div>
-            </div>
-        </div>
-        <hr className="banner-hr" />
-    </div>
+    <embed src="https://cdn11.bigcommerce.com/s-ad1xf4xgb0/content/qr_page/pdf/balance_PDF.pdf" width="100%"
+        height="2100px" />
 
-    <script type="text/javascript" src="../../public/change.js"></script>
 </body>
-
-
 
 </html>

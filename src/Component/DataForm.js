@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useHistory, useNavigate, useLocation } from "react-router-dom";
 
 function ErrorMessage(props) {
   return (
@@ -15,8 +14,11 @@ function ErrorMessage(props) {
     </>
   );
 }
+const getQuery = new Proxy(new URLSearchParams(window.location.search), {
+  get: (searchParams, prop) => searchParams.get(prop),
+});
 function DataForm(props) {
-  let query = useQuery();
+  // eslint-disable-next-line
   const [stringRadio, setStringradio] = useState("true");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -24,23 +26,24 @@ function DataForm(props) {
   const [optinWhatsapp_email, setoptinWhatsapp_email] = useState(1);
   const [validPhone, SetValidphone] = useState(" ");
   const [validName, setValidname] = useState(" ");
+  // eslint-disable-next-line
   const [validemail, setValidemail] = useState(" ");
   const [submitForm, setSubmitForm] = useState("");
   const [subMitButtonColor, setSumbitButtoncolor] = useState("#80a03c75");
+  const [loading, setLoading] = useState(false);
+  let submitBtn = document.getElementById("submit");
+  // eslint-disable-next-line
   const [urlQ, setUrlQ] = useState({
-    product: query.get("product"),
-    utm_medium: query.get("utm_medium"),
-    therapy: query.get("therapy"),
-    subcategory: query.get("subcategory"),
-    utm_source: query.get("utm_source"),
+    product: getQuery.product,
+    utm_medium: getQuery.utm_medium,
+    therapy: getQuery.therapy,
+    subcategory: getQuery.subcategory,
+    utm_source: getQuery.utm_source,
   });
   useEffect(() => {
     submitValidate();
-    console.log("this is the submit button value", submitForm);
-    console.log("this is the submit button color", subMitButtonColor);
   }, [validName, validPhone, validemail, submitValidate]);
   function submitValidate() {
-    console.log("calling final submit");
     if (!validName || !validPhone || !validemail) {
       setSubmitForm(false);
       setSumbitButtoncolor("#80a03c75");
@@ -60,7 +63,7 @@ function DataForm(props) {
 
   function checkName(name) {
     setName(name);
-    var letters = /^[a-zA-Z]+$/;
+    var letters = /^[a-zA-Z]+ [a-zA-Z]+$/;
     if (name.match(letters)) {
       setValidname(true);
     } else {
@@ -68,7 +71,6 @@ function DataForm(props) {
     }
   }
   function phonenumber(contact) {
-    console.log("ephone len", contact.lenght);
     setContact(contact);
     const phone = String(contact).substring(3);
     var phoneno = /^[6789]\d{9}$/;
@@ -84,9 +86,6 @@ function DataForm(props) {
   }
 
   useEffect(() => {
-    // console.log(urlQ)
-    // console.log("this it the product1`23",query.get('product'))
-    // console.log("radiovalue", stringRadio)
     if (optinWhatsapp_email === true) {
       setoptinWhatsapp_email(1);
     }
@@ -95,32 +94,12 @@ function DataForm(props) {
     }
   }, [optinWhatsapp_email]);
 
-  const history = useHistory();
-  useEffect(() => {
-    console.log(" initial phone validation", validPhone);
-  }, [validPhone]);
-  useEffect(() => {
-    getData();
-    console.log(setoptinWhatsapp_email);
-  }, [optinWhatsapp_email]);
-
-  function useQuery() {
-    const { search } = useLocation();
-
-    return React.useMemo(() => new URLSearchParams(search), [search]);
-  }
-
-  function getData() {
-    // console.log("this is therapy:",query.get('therapy'))
-    // console.log("this is utmSource",query.get('utm_source'))
-    // console.log("this is subcat:",query.get('subcategory'))
-  }
+  useEffect(() => {}, [validPhone]);
+  useEffect(() => {}, [optinWhatsapp_email]);
 
   const handleSubmit = (e) => {
+    submitBtn.disabled = true;
     e.preventDefault();
-    console.log("this is the value", typeof valid);
-    console.log(name, contact, email, optinWhatsapp_email, urlQ);
-    console.log("this it ht ephone lenght", contact.length);
     if (
       !String(name).trim() ||
       !String(email).trim() ||
@@ -136,16 +115,16 @@ function DataForm(props) {
         SetValidphone(false);
       }
     } else if (!validPhone) {
-      console.log("ephone pointer");
       SetValidphone(false);
     } else {
+      setLoading(true);
+
       var date = new Date();
       date.setTime(date.getTime() + 1 * 60 * 1000);
       var expires = "; expires=" + date.toGMTString();
       document.cookie =
         "userpdf=" + String(Math.random()) + expires + "; path=/";
 
-      console.log(" going to hit server to submit data");
       fetch("https://kapiva.app/api/4balance_lead.php?p=4balance_lead", {
         method: "POST",
 
@@ -167,17 +146,24 @@ function DataForm(props) {
       })
         .then((res) => {
           res.json();
-          console.log(res);
         })
         .then((result) => {
-          // ("/for_balancepdf");
-          history.push("/for_balancepdf");
+          // document.getElementsByClassName("form-control").item;
+          window.location = window.location =
+            "https://sandbox.kapiva.in/doctor-qr-page-pdf/";
         })
         .catch((error) => {
           alert("Faild");
         });
     }
   };
+
+  // useEffect(() => {
+  //   // clear the input data on first load
+  //   setName("");
+  //   setEmail("");
+  //   setContact("");
+  // }, []);
 
   return (
     <div className="container">
@@ -186,14 +172,17 @@ function DataForm(props) {
           onChange={(e) => checkName(e.target.value)}
           type="text"
           class="form-control"
-          placeholder="First name"
+          placeholder="Full Name"
           aria-label="First name"
+          value={name}
         />
         {validName ? (
           ""
         ) : (
-          <ErrorMessage Message="Please enter a valid First Name" />
+          <ErrorMessage Message="Please enter a valid Full name" />
         )}
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Please choose a username.</div>
       </div>
 
       <div className="form-flex">
@@ -204,6 +193,7 @@ function DataForm(props) {
             class="form-control"
             placeholder="Email"
             aria-label="Email"
+            value={email}
           />
           {validemail ? (
             ""
@@ -220,6 +210,7 @@ function DataForm(props) {
             placeholder="Contact"
             aria-label="Contact"
             minLength={10}
+            value={contact}
           />
           {validPhone ? (
             ""
@@ -239,7 +230,6 @@ function DataForm(props) {
           }}
           checked={optinWhatsapp_email}
           onClick={(e) => {
-            console.log("checkbox value", optinWhatsapp_email);
             setoptinWhatsapp_email(!optinWhatsapp_email);
             if (optinWhatsapp_email) {
               setStringradio("true");
@@ -256,15 +246,29 @@ function DataForm(props) {
           . You may opt out anytime
         </label>
       </div>
+
       <div class="col-12">
-        <input
-          type="Submit"
-          value="VIEW FOR FREE"
+        <button
+          id="submit"
           style={{
             backgroundColor: { subMitButtonColor },
           }}
           onClick={(e) => handleSubmit(e)}
-        />
+        >
+          {loading ? (
+            <div
+              class="spinner-border"
+              style={{
+                width: "1.5rem",
+                height: "1.5rem",
+                marginTop: "7% 0% 0% 0%",
+              }}
+              role="status"
+            ></div>
+          ) : (
+            "VIEW FOR FREE"
+          )}
+        </button>
       </div>
     </div>
   );

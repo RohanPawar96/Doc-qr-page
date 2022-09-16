@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import cookieC from "js-cookie";
 
 function PdfView() {
@@ -16,13 +16,13 @@ function PdfView() {
   );
 }
 export default function For_BalancePDF_Page() {
-  const history = useHistory();
+  const history = useNavigate();
   const usercookie = cookieC.get("userpdf");
   function checkuser() {
     console.log("checking cookie", usercookie);
     if (usercookie) {
     } else {
-      history.push("/");
+      history("/");
     }
   }
 
@@ -30,5 +30,5 @@ export default function For_BalancePDF_Page() {
     console.log("this is the cookie detail", usercookie);
   }
 
-  return <>{usercookie ? <PdfView /> : history.push("/")}</>;
+  return <>{usercookie ? <PdfView /> : history("/")}</>;
 }

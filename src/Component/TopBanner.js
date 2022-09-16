@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import DataForm from "./DataForm";
 
-export default function TopBanner({ setDisplay }) {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "./change.js";
-    script.async = true;
-    document.body.appendChild(script);
-  }, []);
+export default function TopBanner() {
+  // useEffect(() => {
+  //   const script = document.createElement("script");
+  //   script.src = "./change.js";
+  //   script.async = true;
+  //   document.body.appendChild(script);
+  // }, []);
 
   return (
     <>
@@ -78,7 +78,7 @@ export default function TopBanner({ setDisplay }) {
             CUSTOMIZED . LONG TERM . NATURAL
           </p>
         </div>
-        <DataForm setDisplay={setDisplay} />
+        <DataForm />
       </div>
       <div className="mobile">
         <div className="container flex background">
