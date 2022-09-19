@@ -2,12 +2,13 @@ import React, { useEffect } from "react";
 import DataForm from "./DataForm";
 
 export default function TopBanner() {
-  // useEffect(() => {
-  //   const script = document.createElement("script");
-  //   script.src = "./change.js";
-  //   script.async = true;
-  //   document.body.appendChild(script);
-  // }, []);
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src =
+      "https://cdn11.bigcommerce.com/s-ad1xf4xgb0/content/qr_page/change.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
 
   return (
     <>
