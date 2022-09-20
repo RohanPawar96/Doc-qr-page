@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useDebugValue } from "react";
 import MobileApp from "../Component/MobileApp";
 
 export default function Banner() {

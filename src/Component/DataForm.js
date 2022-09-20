@@ -171,7 +171,7 @@ function DataForm(props) {
           utm_source: String(urlQ.utm_source),
         }),
         headers: {
-          Accept: "application/json",
+          Accept: "application/json",-==
           "Content-Type": "application/json",
         },
       })
@@ -179,7 +179,7 @@ function DataForm(props) {
           res.json();
         })
         .then((result) => {
-          if (urlQ.therapy === "") {
+          if (urlQ.therapy === "" || urlQ.therapy === "null") {
             window.location = "https://sandbox.kapiva.in/doctor-qr-page-pdf/";
           } else {
             window.location = `https://sandbox.kapiva.in/${urlQ.therapy}/4balancePDF/`;
