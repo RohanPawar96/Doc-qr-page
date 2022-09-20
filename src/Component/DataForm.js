@@ -171,7 +171,7 @@ function DataForm(props) {
           utm_source: String(urlQ.utm_source),
         }),
         headers: {
-          Accept: "application/json",-==
+          Accept: "application/json",
           "Content-Type": "application/json",
         },
       })
