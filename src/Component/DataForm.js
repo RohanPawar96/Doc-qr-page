@@ -80,7 +80,7 @@ function DataForm(props) {
   }
   function checkName(name) {
     setName(name);
-    var letters = /^[a-zA-Z]+ [a-zA-Z]+$/;
+    var letters = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
     if (name.match(letters)) {
       setValidname(true);
     } else {
