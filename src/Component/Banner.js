@@ -4,7 +4,7 @@ import MobileApp from "../Component/MobileApp";
 export default function Banner() {
   return (
     <>
-      <div className="container banner">
+      <div className="container banner" style={{ padding: "4% 2%" }}>
         <div className="banner-image">
           <img
             src="https://cdn11.bigcommerce.com/s-ad1xf4xgb0/content/qr_page/img/qr-banner.png"

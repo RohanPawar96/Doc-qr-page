@@ -7,11 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        * {
-            font-size: large;
-            font-family: "Jost", sans-serif;
-        }
-
         .pdf {
             width: 100%;
             height: fit-content;
@@ -29,6 +24,19 @@
             background-color: #80a03c;
             color: white;
         }
+
+        @media screen and (max-width: 500px) {
+            button {
+                width: 50%;
+                margin: 5% 25%;
+                padding: 4% 0;
+                font-size: 17px;
+                border: 0;
+                background-color: #80a03c;
+                color: white;
+                font-weight: 600;
+            }
+        }
     </style>
     <script>
 
@@ -36,12 +44,14 @@
             what();
             function what() {
                 let agent = navigator.platform;
+
                 console.log(agent)
                 if (agent === "iPhone") {
-                    document.getElementById("pdf").innerHTML = "<a href='https://cdn11.bigcommerce.com/s-ad1xf4xgb0/content/qr_page/pdf/Kapiva_Healthy_Gut _guide.pdf' download><button>DOWNLOAD</button></a>"
+                    document.getElementById("pdf").innerHTML = "<a href='https://cdn11.bigcommerce.com/s-ad1xf4xgb0/content/qr_page/pdf/balance_PDF.pdf' download= 'https://cdn11.bigcommerce.com/s-ad1xf4xgb0/content/qr_page/pdf/balance_PDF.pdf'><button>DOWNLOAD</button></a>"
                 }
                 else {
-                    document.getElementById("pdf").innerHTML = "<iframe src='https://cdn11.bigcommerce.com/s-ad1xf4xgb0/content/qr_page/pdf/Kapiva_Healthy_Gut _guide.pdf' width='100%' height='2450px' frameborder='0'></iframe>"
+                    document.getElementById("pdf").innerHTML = "<embed src='http://docs.google.com/gview?url=https://drive.google.com/file/d/1TAPlooXz5o8Wv_L0y_Eyvq78EtC_1fm1/view?usp=sharing'frameborder='0' height='800px' width='100%' />"
+
                 }
             };
         }
@@ -57,14 +67,12 @@
             }
         }
         check_cookie_name('userpdf');
-        returnF ? "" : ""
+        returnF ? "" : window.location = ""
     </script>
 </head>
 
 <body>
     <div id="pdf"></div>
-    <a href='https://cdn11.bigcommerce.com/s-ad1xf4xgb0/content/qr_page/pdf/Kapiva_Healthy_Gut _guide.pdf'
-        download><button>DOWNLOAD</button></a>
 </body>
 
 </html>

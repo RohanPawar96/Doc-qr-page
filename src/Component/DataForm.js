@@ -179,11 +179,28 @@ function DataForm(props) {
           res.json();
         })
         .then((result) => {
-          if (urlQ.therapy === "" || urlQ.therapy === "null") {
-            window.location = "https://sandbox.kapiva.in/doctor-qr-page-pdf/";
+          var date = new Date();
+          date.setTime(date.getTime() + 1 * 60 * 1000);
+          var expires = "; expires=" + date.toGMTString();
+          document.cookie =
+            "userpdf=" + String(Math.random()) + expires + "; path=/";
+          if (urlQ.therapy === "skin") {
+            window.location = `https://drive.google.com/file/d/1tYdLjf-Yjt1xiCyU2YtLdbLElQuwR7Vq/view?usp=sharing`;
+          } else if (urlQ.therapy === "hair-care") {
+            window.location = `https://drive.google.com/file/d/1kdsCXF7q0948MZA6eGTF4KZz3ZQxPszR/view?usp=sharing`;
+          } else if (urlQ.therapy === "weight-management") {
+            window.location = `https://drive.google.com/file/d/1RhggFwS8c7RdOgbyYJoPbTWwp5BnNcdW/view?usp=sharing`;
+          } else if (urlQ.therapy === "general-wellness") {
+            window.location = `https://drive.google.com/file/d/1DezheT8iRf9s6OUXIYlgGeCCuwJ5fjML/view?usp=sharing`;
+          } else if (urlQ.therapy === "mens-health") {
+            window.location = `https://drive.google.com/file/d/1DezheT8iRf9s6OUXIYlgGeCCuwJ5fjML/view?usp=sharing`;
           } else {
-            window.location = `https://sandbox.kapiva.in/${urlQ.therapy}/4balancePDF/`;
+            window.location = `https://drive.google.com/file/d/1A8jTHBfKXs9OYxkwajgHkMucZE90kFrQ/view?usp=sharing`;
           }
+          setName("");
+          setEmail("");
+          setContact("");
+          setLoading(false);
         })
         .catch((error) => {
           alert("Faild");

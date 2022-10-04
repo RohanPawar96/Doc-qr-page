@@ -1,5 +1,6 @@
 * {
   font-family: "Jost", sans-serif;
+  font-style: normal !important;
 }
 
 h1,
@@ -108,6 +109,7 @@ h1.head-h1 {
   letter-spacing: 1.2px;
   opacity: 1;
   font-size: 56px;
+  font-style: normal !important;
 }
 
 p.head-p {
@@ -125,7 +127,6 @@ p.head-p {
 
 .banner {
   margin: 3% auto !important;
-  padding: 4% 2% !important;
   box-shadow: 0px 0px 5px 0px #80a03c;
   box-shadow: inset 0px 0px 5px #80a03c;
 }
@@ -327,7 +328,7 @@ p.number-content {
 
 @media screen and (max-width: 350px) {
   .main {
-    background-image: url("https://cdn11.bigcommerce.com/s-ad1xf4xgb0/content/qr_page/img/qr-mobile-background.png");
+    background-image: url("https://cdn11.bigcommerce.com/s-ad1xf4xgb0/content/qr_page/img/qr-mobile-background.png") !important;
     background-size: 100%;
     padding: 5% 0;
   }
@@ -495,7 +496,7 @@ p.number-content {
 
 @media screen and (min-width: 351px) and (max-width: 599px) {
   .main {
-    background-image: url("https://cdn11.bigcommerce.com/s-ad1xf4xgb0/content/qr_page/img/qr-mobile-background.png");
+    background-image: url("https://cdn11.bigcommerce.com/s-ad1xf4xgb0/content/qr_page/img/qr-mobile-background.png") !important;
     background-size: 100%;
     padding: 5% 0;
   }
@@ -698,7 +699,7 @@ p.number-content {
 
 @media screen and (min-width: 600px) and (max-width: 950px) {
   .main {
-    background-image: url("https://cdn11.bigcommerce.com/s-ad1xf4xgb0/content/qr_page/img/qr-mobile-background.png");
+    background-image: url("https://cdn11.bigcommerce.com/s-ad1xf4xgb0/content/qr_page/img/qr-mobile-background.png") !important;
     background-size: 100% 100%;
     padding: 5% 0;
   }
@@ -769,4 +770,47 @@ p.number-content {
   }
 }
 
-/*********************************************Animation********************************************************************/
+/*********************************************BigCommerce Changes********************************************************************/
+
+.page-content {
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+.page-heading {
+  margin: 0 0 3rem;
+  text-align: center;
+  display: none !important;
+}
+
+.container {
+  max-width: 100% !important;
+  padding: 0;
+}
+
+.footer {
+  margin: 0% !important;
+}
+
+.main {
+  background-image: url(https://cdn11.bigcommerce.com/s-ad1xf4xgb0/content/qr_page/img/qr-desktop-background.png);
+  background-size: 100%;
+  padding: 2% 5% 15% 5% !important;
+}
+
+ol.breadcrumbs {
+  display: none !important;
+}
+
+body {
+  padding-top: 77px !important;
+}
+
+.flex {
+  padding: 0 !important;
+}
+
+.col {
+  flex: 1 0 0%;
+  padding: 0;
+}

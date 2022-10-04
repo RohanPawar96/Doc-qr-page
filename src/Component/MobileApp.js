@@ -2,7 +2,7 @@ import React from "react";
 
 export default function MobileApp() {
   return (
-    <div className="container banner">
+    <div className="container banner" style={{ padding: "4% 2%" }}>
       <h1>Kapiva app is LIVE!</h1>
       <p>
         Download & Signup, to get
